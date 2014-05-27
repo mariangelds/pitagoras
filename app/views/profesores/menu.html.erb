@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="large-12 columns">
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1>
+              <a href="#">
+                Pitagoras
+              </a>
+            </h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+          <ul class="left">
+            <li><%= link_to 'Subir Archivos', archivos_cargar_path  %></li>
+            <li><%= link_to 'Ver Notas', archivos_profesor_notas_path  %></li>
+            <li><%= link_to 'Mandar Correo', profesores_correo_masivo_path  %></li>
+            <li><%= link_to 'Salir', profesores_logout_path  %></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <section>
+      <div class="column"> 
+        <h4>Bienvenido profesor: <%= session['profesor'] %></h4> 
+      </div> 
+      <br />
+      <div class="column">
+        <div class="form-centered">
+
+        </div> 
+      </div> 
+    </section>
+  </div>
+  <br> 
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr>
+      <div class="row">
+        <div class="large-6 columns">
+          <p>© Copyright MJRuby</p>
+        </div>
+      </div>
+    </div>
+  </footer>

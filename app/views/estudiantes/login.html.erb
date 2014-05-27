@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="large-12 columns">
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1>
+              <a href="#">
+                Pitagoras
+              </a>
+            </h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+           <ul class="left">
+            <li><%= link_to 'Profesores', profesores_login_path  %></li>
+            <li><%= link_to 'Estudiantes', estudiantes_login_path  %></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <br/>
+      <h4>Ingrese al sistema</h4>
+
+      <br/>
+      <br/>
+      <br/>
+    </div>
+  </div>
+
+ <% content_for :title do %>Pit&aacute;goras<% end %>
+  <div class="large-12 columns">
+      <div class="row">
+        <div class="large-4 small-6 columns">
+          <%= form_tag({:controller => "estudiantes", :action => "create_login_estudiante"}, method: "post",) do %>
+            <p>Por favor ingrese su cédula:</p>
+            <p align="left"> Cédula: <%= text_field_tag(:cedula) %> </p>   
+            <%= submit_tag("Ingresar") %>
+          <% end %>
+        </div>
+      </div>
+  </div>
+<br/ >
+<br/ >
+
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr>
+      <div class="row">
+        <div class="large-6 columns">
+          <p>© Copyright MJRuby</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+    
