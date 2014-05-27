@@ -21,7 +21,7 @@ class SuscripcionesController < ApplicationController
 					@suscripcion.suscribete_ruby
 			end
 
-			UsuarioCorreo.contacto_email(@suscripcion).deliver
+			#UsuarioCorreo.contacto_email(@suscripcion).deliver
 			flash[:notice] = "Registrado #{@suscripcion.email} en nuestra lista de correos"
 			render 'estudiantes/menu'
 		else
