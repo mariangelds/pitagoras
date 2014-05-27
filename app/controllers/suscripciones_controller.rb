@@ -10,23 +10,23 @@ class SuscripcionesController < ApplicationController
 	def createSuscripcion 
 		@suscripcion= Suscripcion.new(secure_params)
 		if @suscripcion.valid?
-			if (@suscripcion.materia == 1)
+			if (@suscripcion.materia == '1')
 				@suscripcion.suscribete_base
 			end
-			if (@suscripcion.materia == 2)
+			if (@suscripcion.materia == '2')
 				@suscripcion.suscribete_desarrollo
 			end
 
-			if (@suscripcion.materia == 3)
+			if (@suscripcion.materia == '3')
 					@suscripcion.suscribete_ruby
 			end
 
 			UsuarioCorreo.contacto_email(@suscripcion).deliver
 			flash[:notice] = "Registrado #{@suscripcion.email} en nuestra lista de correos"
-			render 'home/index'
+			render 'estudiantes/menu'
 		else
-			flash[:notice] = "fallo"
-			render 'home/index'
+			flash[:notice] = "No se pudo suscribir"
+			render 'estudiantes/menu'
 		end
 	end
 
